@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story ❤️</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Persistent Global Background Audio -->
+    <audio id="bg-music" loop>
+        <source src="assets/music/our-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Global Effects Containers -->
+    <div id="sparkles-container"></div>
+    <div id="butterflies-container"></div>
+    <div id="confetti-container"></div>
+
+    <!-- Cinematic Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="glow-heart">❤️</div>
+            <p class="loading-text">Preparing a special memory...</p>
+        </div>
+    </div>
+
+    <!-- Page Container (disables body scroll) -->
+    <div id="app-container">
+
+        <!-- PAGE 1: Landing Page -->
+        <div id="page-1" class="page active">
+            <div class="bg-gradient"></div>
+            <div class="glass-card page-content">
+                <h1 class="main-title">Happy Girlfriend's Day ❤️</h1>
+                <p class="subtitle">To the most beautiful soul in my universe.</p>
+                <h2 class="names">Kshitij ❤️ Shivangi</h2>
+                
+                <div class="counter-container">
+                    <p class="counter-label">Together Since<br>1 December 2025 ❤️</p>
+                    <div id="countdown" class="countdown">
+                        <div class="time-box"><span id="days">0</span><label>Days</label></div>
+                        <div class="time-box"><span id="hours">0</span><label>Hours</label></div>
+                        <div class="time-box"><span id="minutes">0</span><label>Minutes</label></div>
+                        <div class="time-box"><span id="seconds">0</span><label>Seconds</label></div>
+                    </div>
+                </div>
+                <button class="glowing-btn nav-next" data-target="2">Enter Our Story</button>
+            </div>
+        </div>
+
+        <!-- PAGE 2: Memory Gallery Page -->
+        <div id="page-2" class="page">
+            <div class="page-header">
+                <h2 class="cinematic-text">Chapter 1:<br>Where Every Picture Tells Our Story.</h2>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="masonry-grid" id="masonry-grid">
+                    <!-- Images injected by JS -->
+                </div>
+            </div>
+
+            <!-- Lightbox -->
+            <div id="lightbox" class="lightbox">
+                <span class="close-lightbox">&times;</span>
+                <div class="lightbox-content">
+                    <button class="lightbox-btn prev-btn">&lt;</button>
+                    <img id="lightbox-img" src="" alt="Memory">
+                    <button class="lightbox-btn next-btn">&gt;</button>
+                </div>
+            </div>
+
+            <div class="page-navigation">
+                <button class="text-btn nav-prev" data-target="1">&larr; Back</button>
+                <button class="glowing-btn nav-next" data-target="3">Next Chapter &rarr;</button>
+            </div>
+        </div>
+
+        <!-- PAGE 3: Love Letter Page -->
+        <div id="page-3" class="page">
+            <div class="page-header">
+                <h2 class="cinematic-text">Chapter 2:<br>A Letter From My Heart</h2>
+            </div>
+            
+            <div class="envelope-wrapper">
+                <div class="envelope" id="envelope">
+                    <div class="front flap"></div>
+                    <div class="front pocket"></div>
+                    <div class="letter">
+                        <div class="letter-content" id="letter-content"></div>
+                    </div>
+                    <div class="envelope-text">Tap to open</div>
+                </div>
+            </div>
+            
+            <div class="signature hidden" id="signature">
+                Forever yours,<br>Kshitij ❤️
+            </div>
+
+            <div class="page-navigation fixed-bottom">
+                <button class="text-btn nav-prev" data-target="2">&larr; Back</button>
+                <button class="glowing-btn nav-next" data-target="4">Next Chapter &rarr;</button>
+            </div>
+        </div>
+
+        <!-- PAGE 4: Reasons Page -->
+        <div id="page-4" class="page">
+            <div class="page-header">
+                <h2 class="cinematic-text">Chapter 3:<br>Why I Love You</h2>
+            </div>
+
+            <div class="reasons-container">
+                <div class="glass-card reason-card" id="reason-card">
+                    <div class="progress-indicator"><span id="current-reason">1</span> / 25</div>
+                    <h3 id="reason-title" class="reason-title">Your smile ❤️</h3>
+                    <p id="reason-desc" class="reason-desc">I love your smile because...</p>
+                    <div class="reason-controls">
+                        <button id="prev-reason" class="control-btn" disabled>&larr; Previous</button>
+                        <button id="next-reason" class="control-btn">Next &rarr;</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-navigation fixed-bottom">
+                <button class="text-btn nav-prev" data-target="3">&larr; Back</button>
+                <button class="glowing-btn nav-next" data-target="5">Next Chapter &rarr;</button>
+            </div>
+        </div>
+
+        <!-- PAGE 5: Song Page -->
+        <div id="page-5" class="page">
+            <div class="bg-gradient dark"></div>
+            <div class="music-page-content glass-card">
+                <div class="record-player">
+                    <div class="vinyl-record" id="vinyl">
+                        <div class="vinyl-label">
+                            ❤️
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 class="song-title">Perfect</h2>
+                <h3 class="artist-name">Ed Sheeran</h3>
+                
+                <div class="large-visualizer">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                
+                <div class="main-music-controls">
+                    <button id="main-play-btn" class="main-control-btn">⏸️</button>
+                    <div class="volume-container">
+                        <label>🔊</label>
+                        <input type="range" id="main-volume" min="0" max="1" step="0.01" value="0.5">
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-navigation fixed-bottom">
+                <button class="text-btn nav-prev" data-target="4">&larr; Back</button>
+                <button class="glowing-btn nav-next" data-target="6">Final Chapter &rarr;</button>
+            </div>
+        </div>
+
+        <!-- PAGE 6: Final Surprise Page -->
+        <div id="page-6" class="page">
+            <div class="night-sky">
+                <div class="stars"></div>
+                <div class="moon"></div>
+            </div>
+            
+            <div id="surprise-trigger" class="surprise-container">
+                <div id="secret-heart" class="glowing-heart pulse-slow">❤️</div>
+                <p class="surprise-hint">Touch the heart</p>
+            </div>
+
+            <div id="final-reveal" class="final-content glass-card hidden">
+                <div class="fav-photo-placeholder">
+                    <img src="assets/photo1.jpg.jpeg" alt="Favorite Photo">
+                </div>
+                
+                <div class="dramatic-text-container">
+                    <h2 class="reveal-text line-1">I don't need a thousand reasons to love you.</h2>
+                    <h3 class="reveal-text line-2">I just need one...</h3>
+                    <h1 class="reveal-text line-3">You ❤️</h1>
+                </div>
+
+                <p class="final-message">Thank you for making my world brighter every single day.</p>
+                <div class="final-names">
+                    <h2>Kshitij ❤️ Shivangi</h2>
+                    <p>01.12.2025 - Forever</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Small Floating Mini Player (visible after landing) -->
+    <div id="mini-player" class="mini-player hidden">
+        <button id="mini-play-btn">⏸️</button>
+        <span>Perfect - Ed Sheeran</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
